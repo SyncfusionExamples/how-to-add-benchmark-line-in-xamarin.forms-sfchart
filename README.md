@@ -1,4 +1,4 @@
-# how-to-add-benchmark-line-in-xamarin.forms-sfchart
+# How to add benchmark line in Xamarin.Forms SfChart
 This example demonstrates how to represent a benchmark/threshold-indicator line in Xamarin.Forms SfChart using the annotation feature.
 
 See [How to add benchmark line in Xamarin.Forms SfChart](https://www.syncfusion.com/kb/9304?utm_medium=listing&utm_source=github-examples) for more details.

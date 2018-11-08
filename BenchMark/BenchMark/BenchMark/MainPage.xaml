@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BenchMark"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             x:Class="BenchMark.MainPage" Padding="0,15,0,0">
+
+    <chart:SfChart x:Name="chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <chart:SfChart.ColorModel>
+            <chart:ChartColorModel Palette="Natural" />
+        </chart:SfChart.ColorModel>
+        
+        <chart:SfChart.BindingContext>
+            <local:ViewModel x:Name="viewModel"/>
+        </chart:SfChart.BindingContext>
+
+        <chart:SfChart.PrimaryAxis>
+            <chart:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False" >
+				<chart:CategoryAxis.MajorTickStyle>
+					<chart:ChartAxisTickStyle TickSize="0" />
+				</chart:CategoryAxis.MajorTickStyle>
+			</chart:CategoryAxis>
+        </chart:SfChart.PrimaryAxis>
+
+        <chart:SfChart.SecondaryAxis>
+            <chart:NumericalAxis IsVisible="False" ShowMajorGridLines="False" />
+        </chart:SfChart.SecondaryAxis>
+
+        <chart:SfChart.Series>
+            <chart:ColumnSeries ItemsSource="{Binding SeriesData}" XBindingPath="XValue" YBindingPath="YValue">
+                <chart:ColumnSeries.DataMarker>
+                    <chart:ChartDataMarker>
+                        <chart:ChartDataMarker.LabelStyle>
+                            <chart:DataMarkerLabelStyle LabelPosition="Inner" LabelFormat="0'%'" />
+                        </chart:ChartDataMarker.LabelStyle>
+                    </chart:ChartDataMarker>
+                </chart:ColumnSeries.DataMarker>
+            </chart:ColumnSeries>
+        </chart:SfChart.Series>
+
+        <chart:SfChart.ChartAnnotations>
+            <chart:HorizontalLineAnnotation Y1="62"  Text = "Benchmark" StrokeColor="Orange" StrokeWidth = "6">
+                <chart:HorizontalLineAnnotation.LabelStyle>
+                    <chart:ChartAnnotationLabelStyle Font="12" HorizontalTextAlignment="Start" VerticalTextAlignment="End"/>
+                </chart:HorizontalLineAnnotation.LabelStyle>
+            </chart:HorizontalLineAnnotation>
+        </chart:SfChart.ChartAnnotations>
+
+    </chart:SfChart>
+</ContentPage>
